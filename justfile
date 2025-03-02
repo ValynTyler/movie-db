@@ -13,8 +13,7 @@ display_actor_ids_names:
     | bat
 
 display_actor_movies:
-  @ ./api/actors.sh \
-    | jq -r '.results[].id' \
-    | while read id; do echo "$id is cool"; done \
+  @ ./api/actor_movies.sh 64 \
+    | jq -r '.cast[] | "\(.release_date) \(.title)"' \
     | bat
 
