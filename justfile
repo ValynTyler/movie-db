@@ -1,9 +1,6 @@
 run:
   ./run.sh
 
-init:
-  @ sqlite3 movies.db < sql/schema.sql
-
 display_actor_ids:
   @ ./api/actors.sh | jq -r '.results[].id' | bat
 

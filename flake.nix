@@ -14,7 +14,6 @@
         bat
         just
         jq
-        sqlite
       ];
 
       env.URL = "https://api.themoviedb.org";
