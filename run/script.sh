@@ -34,5 +34,10 @@ get_actor_ids | while read id; do
   name=$(get_name_by_id $id)
   movie=$(get_latest_movie $id)
 
+  sqlite3 movies.db << EOF
+INSERT OR REPLACE INTO temp_actors_movies (id, actor_name, most_recent_movie)
+VALUES ($id, '$name', '$movie');
+EOF
+
   echo "$name was most recently in $movie."
 done
