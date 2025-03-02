@@ -9,7 +9,12 @@
   in
   {
     devShells.x86_64-linux.default = pkgs.mkShell {
-      buildInputs = with pkgs; [ just jq ];
+      buildInputs = with pkgs; [
+        curl
+        bat
+        just
+        jq
+      ];
     };
   };
 }
