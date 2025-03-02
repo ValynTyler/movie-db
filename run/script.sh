@@ -12,3 +12,9 @@ get_api_key() {
 if ! grep -q "^API_KEY=" ".env"; then
   echo "API_KEY=$(get_api_key)" >> .env
 fi
+
+curl \
+  -X GET "https://api.themoviedb.org/3/person/popular?api_key=$API_KEY" \
+  -H "Accept: application/json" \
+  | jq -r '.results[].name' \
+  | bat
