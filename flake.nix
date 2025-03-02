@@ -14,6 +14,7 @@
         bat
         just
         jq
+        sqlite
       ];
     };
   };
