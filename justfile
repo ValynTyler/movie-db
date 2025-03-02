@@ -8,6 +8,13 @@ display_actor_names:
   @ ./api/actors.sh | jq -r '.results[].name' | bat
 
 display_actor_ids_names:
-  @ ./api/actors.sh
-    | jq -r '.results[] | "\(.id): \(.name)"'
+  @ ./api/actors.sh \
+    | jq -r '.results[] | "\(.id): \(.name)"' \
     | bat
+
+display_actor_movies:
+  @ ./api/actors.sh \
+    | jq -r '.results[].id' \
+    | while read id; do echo "$id is cool"; done \
+    | bat
+
