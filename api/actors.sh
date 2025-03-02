@@ -5,6 +5,7 @@ if [ -z "$API_KEY" ]; then
   exit 1
 else
   curl \
+    -s \
     -X GET "$URL/3/person/popular?api_key=$API_KEY" \
     -H "Accept: application/json"
 fi
