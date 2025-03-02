@@ -1,0 +1,4 @@
+CREATE TABLE actors (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+);
