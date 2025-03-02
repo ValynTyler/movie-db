@@ -1,3 +1,6 @@
+run:
+  ./run.sh
+
 init:
   @ sqlite3 movies.db < sql/schema.sql
 
@@ -16,4 +19,3 @@ display_actor_movies:
   @ ./api/actor_movies.sh 64 \
     | jq -r '.cast[] | "\(.release_date) \(.title)"' \
     | bat
-
