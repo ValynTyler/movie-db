@@ -1,4 +1,4 @@
-CREATE TABLE actors (
+CREATE TABLE IF NOT EXISTS actors (
   id INTEGER PRIMARY KEY,
-  name TEXT NOT NULL,
+  name TEXT NOT NULL
 );
